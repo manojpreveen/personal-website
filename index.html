@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Manoj Preveen</title>
+  <meta name="description" content="Manoj Preveen — Co-Founder at Purands." />
+
+  <!-- Open Graph / social preview -->
+  <meta property="og:title" content="Manoj Preveen" />
+  <meta property="og:description" content="Co-Founder at Purands." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://manojpreveen.com" />
+
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>👋</text></svg>" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <button id="theme-toggle" class="theme-toggle" aria-label="Toggle dark mode" title="Toggle theme">
+    <span class="theme-toggle__icon">🌙</span>
+  </button>
+
+  <main class="container">
+    <header class="hero">
+      <p class="hero__eyebrow">Hello, I'm</p>
+      <h1 class="hero__name">Manoj Preveen</h1>
+      <p class="hero__role">Co-Founder at <span class="accent">Purands</span></p>
+    </header>
+
+    <section class="about">
+      <p>
+        I'm building Purands. This is my little corner of the web — a work in
+        progress. More about what I do, the things I'm building, and how to
+        reach me is coming soon.
+      </p>
+    </section>
+
+    <nav class="links" aria-label="Social links">
+      <a class="link" href="mailto:manojpreveen@gmail.com">
+        <span class="link__label">Email</span>
+        <span class="link__arrow">→</span>
+      </a>
+      <a class="link" href="https://github.com/manojpreveen" target="_blank" rel="noopener noreferrer">
+        <span class="link__label">GitHub</span>
+        <span class="link__arrow">↗</span>
+      </a>
+      <a class="link" href="https://www.linkedin.com/in/manojpreveen" target="_blank" rel="noopener noreferrer">
+        <span class="link__label">LinkedIn</span>
+        <span class="link__arrow">↗</span>
+      </a>
+    </nav>
+  </main>
+
+  <footer class="footer">
+    <p>© <span id="year"></span> Manoj Preveen</p>
+  </footer>
+
+  <script>
+    // Footer year
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Theme toggle with persistence + system preference
+    (function () {
+      const root = document.documentElement;
+      const toggle = document.getElementById('theme-toggle');
+      const icon = toggle.querySelector('.theme-toggle__icon');
+
+      const saved = localStorage.getItem('theme');
+      const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+      const initial = saved || (prefersDark ? 'dark' : 'light');
+      apply(initial);
+
+      function apply(theme) {
+        root.setAttribute('data-theme', theme);
+        icon.textContent = theme === 'dark' ? '☀️' : '🌙';
+      }
+
+      toggle.addEventListener('click', function () {
+        const next = root.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+        apply(next);
+        localStorage.setItem('theme', next);
+      });
+    })();
+  </script>
+</body>
+</html>
