@@ -1,20 +1,31 @@
 # personal-website
 
-My personal website — [manojpreveen.com](https://manojpreveen.com)
+My personal website - [manojpreveen.com](https://manojpreveen.com)
 
-A clean, static single-page site (plain HTML/CSS/JS), hosted on **GitHub Pages**.
+A polished, static multi-page portfolio (plain HTML/CSS/JS, no build step),
+hosted on **GitHub Pages**.
 
-## Files
+## Pages
 
-- `index.html` — page content and structure
-- `styles.css` — styling (with light/dark theme)
-- `CNAME` — custom domain config for GitHub Pages
+- `index.html` - home: hero, what I'm building at Purands, stats, focus areas
+- `about.html` - bio, principles, skills, education, languages
+- `work.html` - Purands deep-dive + experience timeline
+- `contact.html` - contact and social links
+
+## Shared files
+
+- `styles.css` - full design system + components (light/dark theme)
+- `script.js` - theme toggle, sticky header, mobile menu, scroll-reveal, counters
+- `CNAME` - custom domain config for GitHub Pages
+
+The header and footer are repeated in each HTML file (no build step); when you
+edit one, mirror the change across the pages. The active nav link is marked with
+`class="... is-active"` per page.
 
 ## Editing content
 
-Open `index.html` and edit the text directly — your name, role, the about
-paragraph, and the links. Commit and push, and the live site updates
-automatically within a minute or two.
+Open the relevant `.html` file and edit the text directly. Commit and push to
+`master`, and the live site updates automatically within a minute or two.
 
 ## Local preview
 
