@@ -10,9 +10,10 @@ hosted on **GitHub Pages**.
 ```
 .
 ├── index.html            -> manojpreveen.com/        (home)
-├── about/index.html      -> manojpreveen.com/about
-├── work/index.html       -> manojpreveen.com/work
-├── contact/index.html    -> manojpreveen.com/contact
+├── about.html            -> manojpreveen.com/about
+├── work.html             -> manojpreveen.com/work
+├── contact.html          -> manojpreveen.com/contact
+├── 404.html              -> custom not-found page (GitHub Pages serves it)
 ├── assets/
 │   ├── css/styles.css    full design system + components (light/dark theme)
 │   └── js/script.js      theme toggle, sticky header, mobile menu,
@@ -22,10 +23,11 @@ hosted on **GitHub Pages**.
 └── README.md
 ```
 
-Each page lives in its own folder as `index.html`, which gives clean,
-extensionless URLs (`/about` instead of `/about.html`). Links and asset
-references are **root-relative** (`/about`, `/assets/css/styles.css`) so they
-resolve correctly from any page.
+Pages are flat `.html` files. GitHub Pages serves `about.html` at the clean,
+extensionless URL `/about` with **no trailing slash** (a folder like
+`about/index.html` would 301-redirect `/about` -> `/about/`, which we avoid).
+Links and asset references are **root-relative** (`/about`,
+`/assets/css/styles.css`) so they resolve correctly from any page.
 
 The header and footer are repeated in each page (no build step); when you edit
 one, mirror the change across the pages. The active nav link is marked with
@@ -34,7 +36,7 @@ one, mirror the change across the pages. The active nav link is marked with
 
 ## Editing content
 
-Open the relevant page's `index.html` and edit the text directly. Commit and
+Open the relevant page's `.html` file and edit the text directly. Commit and
 push to `master`, and the live site updates automatically within a minute or
 two. After editing CSS/JS, bump the `?v=N` cache-buster on its `<link>`/`<script>`
 reference in every page so browsers fetch the new file.
