@@ -860,7 +860,7 @@ a { color: inherit; }
   margin-top: 0.5rem;
 }
 .notfound__text {
-  margin-top: 1rem;
+  margin: 1rem auto 0;
   font-size: 1.0625rem;
   color: var(--text-muted);
   max-width: 46ch;
