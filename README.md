@@ -5,35 +5,48 @@ My personal website - [manojpreveen.com](https://manojpreveen.com)
 A polished, static multi-page portfolio (plain HTML/CSS/JS, no build step),
 hosted on **GitHub Pages**.
 
-## Pages
+## Structure
 
-- `index.html` - home: hero, what I'm building at Purands, stats, focus areas
-- `about.html` - bio, principles, skills, education, languages
-- `work.html` - Purands deep-dive + experience timeline
-- `contact.html` - contact and social links
+```
+.
+├── index.html            -> manojpreveen.com/        (home)
+├── about/index.html      -> manojpreveen.com/about
+├── work/index.html       -> manojpreveen.com/work
+├── contact/index.html    -> manojpreveen.com/contact
+├── assets/
+│   ├── css/styles.css    full design system + components (light/dark theme)
+│   └── js/script.js      theme toggle, sticky header, mobile menu,
+│                         scroll-reveal, counters, GA4 event tracking
+├── CNAME                 custom domain config for GitHub Pages
+├── LICENSE
+└── README.md
+```
 
-## Shared files
+Each page lives in its own folder as `index.html`, which gives clean,
+extensionless URLs (`/about` instead of `/about.html`). Links and asset
+references are **root-relative** (`/about`, `/assets/css/styles.css`) so they
+resolve correctly from any page.
 
-- `styles.css` - full design system + components (light/dark theme)
-- `script.js` - theme toggle, sticky header, mobile menu, scroll-reveal, counters
-- `CNAME` - custom domain config for GitHub Pages
-
-The header and footer are repeated in each HTML file (no build step); when you
-edit one, mirror the change across the pages. The active nav link is marked with
-`class="... is-active"` per page.
+The header and footer are repeated in each page (no build step); when you edit
+one, mirror the change across the pages. The active nav link is marked with
+`class="... is-active"` per page. Analytics is Google Analytics 4
+(`G-1KL61C6P6J`); the gtag snippet is in each page's `<head>`.
 
 ## Editing content
 
-Open the relevant `.html` file and edit the text directly. Commit and push to
-`master`, and the live site updates automatically within a minute or two.
+Open the relevant page's `index.html` and edit the text directly. Commit and
+push to `master`, and the live site updates automatically within a minute or
+two. After editing CSS/JS, bump the `?v=N` cache-buster on its `<link>`/`<script>`
+reference in every page so browsers fetch the new file.
 
 ## Local preview
 
-Just open `index.html` in a browser, or run a simple server:
+Run a simple server from the project root (root-relative paths need a server,
+not `file://`):
 
 ```bash
 python3 -m http.server 8000
-# then visit http://localhost:8000
+# then visit http://localhost:8000  (clean URLs like /about work too)
 ```
 
 ## Hosting (GitHub Pages)
