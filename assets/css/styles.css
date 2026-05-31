@@ -864,6 +864,7 @@ a { color: inherit; }
   font-size: 1.0625rem;
   color: var(--text-muted);
   max-width: 46ch;
+  text-align: center;
 }
 .notfound__cta {
   margin-top: 2.25rem;
