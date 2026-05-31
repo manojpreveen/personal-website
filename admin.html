@@ -13,7 +13,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,500&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="/assets/css/styles.css?v=10" />
+  <link rel="stylesheet" href="/assets/css/styles.css?v=11" />
 
   <script>
     (function () {
@@ -111,17 +111,13 @@
         </a>
       </div>
 
-      <!-- Embedded Looker Studio dashboard.
-           Replace the placeholder block below with your real embed iframe:
-           <iframe src="https://lookerstudio.google.com/embed/reporting/REPORT_ID/page/PAGE_ID"
-                   allowfullscreen sandbox="allow-storage-access-by-user-activation allow-scripts allow-same-origin allow-popups allow-popups-to-escape-sandbox"></iframe>
-      -->
+      <!-- Embedded Looker Studio dashboard (GA4 data) -->
       <div class="admin-embed" id="admin-embed">
-        <div class="admin-embed__placeholder">
-          <h3>Dashboard not connected yet</h3>
-          <p>Create a free <strong>Looker Studio</strong> report on your GA4 data, click <strong>Share → Embed report</strong>, copy the <code>&lt;iframe&gt;</code>, and paste it into <code>admin.html</code> in place of this placeholder.</p>
-          <p>Until then, use the <strong>GA4</strong> and <strong>Clarity</strong> links above — they have everything (active users, countries, sections, clicks, heatmaps).</p>
-        </div>
+        <iframe
+          src="https://datastudio.google.com/embed/reporting/282dc19d-a0a4-4984-8dc9-c19aa916d350/page/h4pzF"
+          title="Analytics dashboard"
+          allowfullscreen
+          sandbox="allow-storage-access-by-user-activation allow-scripts allow-same-origin allow-popups allow-popups-to-escape-sandbox"></iframe>
       </div>
 
       <!-- Optional second embed: Clarity heatmap dashboards can also be linked above. -->
@@ -163,7 +159,7 @@
   </footer>
 
   <!-- Shared site behavior (theme, header, mobile menu) -->
-  <script src="/assets/js/script.js?v=10"></script>
+  <script src="/assets/js/script.js?v=11"></script>
 
   <!-- Admin gate (client-side; real protection is on the embedded dashboards) -->
   <script>
